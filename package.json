@@ -1,0 +1,9 @@
+{
+  "name": "request-scheduler",
+  "version": "1.0.0",
+  "description": "An HTTP Request Scheduler, with priority management",
+  "main": "index.ts",
+  "repository": "https://github.com/alaamoum/request-scheduler",
+  "author": "Achraf Laamoum",
+  "license": "MIT"
+}
