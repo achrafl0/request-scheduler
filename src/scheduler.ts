@@ -43,7 +43,7 @@ export class TaskScheduler {
     /*
       Comportement attendu:
       - Si elle était en waitlist : rien ne change
-      - Si elle était lance : potentiellement ajouter des
+      - Si elle était lance : potentiellement ajouter des requetes selon les regles
 
     */
     const request = this._findByUrl(url);
