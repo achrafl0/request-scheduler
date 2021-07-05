@@ -132,8 +132,7 @@ export class TaskScheduler {
       return await request.request.run();
     } catch (error) {
       // TODO : Ajouter un system de automatic reequeue des failed requests avec une plus petites priorité
-      // request.changeStatus(RequestStatus.FAILED);
-      throw error;
+      console.error(error);
     } finally {
       request.status = RequestStatus.DONE;
       this._queue.splice(this._queue.indexOf(request), 1);
