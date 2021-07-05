@@ -1,13 +1,34 @@
-import { AsyncTask, IHTTPRequest, TaskPriority } from './types';
+import { RequestPriority } from './types';
+import fetch from 'node-fetch';
 
-export class HTTPRequest extends AsyncTask implements IHTTPRequest {
+export class HTTPRequest<T = any> {
   url: string;
-  constructor(url: string, priority: TaskPriority = TaskPriority.NORMAL) {
-    super(priority);
+  abortController: AbortController;
+  priority: RequestPriority;
+
+  constructor(url: string, priority: RequestPriority = RequestPriority.NORMAL) {
+    this.priority = priority;
     this.url = url;
+    this.abortController = new AbortController();
   }
-  async execute() {
-    const url = await fetch(this.url);
-    return url.json();
+
+  async run() {
+    return fetch(this.url, {
+      method: 'get',
+      signal: this.abortController.signal,
+    }).then((response) => {
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
+      return response.json() as Promise<T>;
+    });
+  }
+
+  cancel() {
+    this.abortController.abort();
+  }
+
+  changePriority(priority: RequestPriority) {
+    this.priority = priority;
   }
 }
