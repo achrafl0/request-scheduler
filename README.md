@@ -1,13 +1,6 @@
 
 # Request Scheduler / Orchestrateur de Requete HTTP
 
-## Pour Canal+
-
-### Remarques Generales
-
-Je tiens tout d'abord à vous remercier pour le temps que vous avez pris pour tout mon processus, et merci pour le temps que vous avez pris pour review mon code. J'ai essayé de le rendre le plus lisible possible, même si je ne suis pas pris, je serais très interessé par tout feedback possible !
-
-Le test est un des tests les plus compliqués que j'ai du à faire, ce qui me rassure sur le fait que j'apprendrais plein de chose à Canal+. Mais il m'a permis d'explorer plusieurs notions de `javascript` qui ne sont pas si évidentes. La chose la plus compliquée que j'ai confronté dans ce sujet était de designer l'API et surtout de trouver une manière de remonter la valeur de la résolution de la requête là ou elle est demandée.
 
 ### Stratégies explorées et temps utilisé
 
